@@ -1,0 +1,56 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Vehicle {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  email: String!
+  carMake: String!
+  carModel: String!
+  vinNumber: String!
+  manufacturedDate: String!
+  ageOfVehicle: Int!
+}
+
+type Query {
+  findAll(paginationDto: PaginationDto!): [Vehicle!]!
+  findOne(id: Int!): Vehicle!
+}
+
+input PaginationDto {
+  order: String!
+  first: Int!
+  offset: Int!
+}
+
+type Mutation {
+  createVehicle(createVehicleInput: CreateVehicleInput!): Vehicle!
+  updateVehicle(updateVehicleInput: UpdateVehicleInput!): Vehicle!
+  removeVehicle(id: Int!): Vehicle!
+}
+
+input CreateVehicleInput {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  email: String!
+  carMake: String!
+  carModel: String!
+  vinNumber: String!
+  manufacturedDate: String!
+  ageOfVehicle: Int!
+}
+
+input UpdateVehicleInput {
+  id: Int
+  firstName: String!
+  lastName: String!
+  email: String!
+  carMake: String!
+  carModel: String!
+  vinNumber: String!
+  manufacturedDate: String!
+  ageOfVehicle: Int!
+}

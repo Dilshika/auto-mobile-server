@@ -1,14 +1,16 @@
 /* eslint-disable prettier/prettier */
-import { Module } from '@nestjs/common';
+import { Module, } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
-import { FileUploadModule } from './file-upload/file-upload.module';
+import { VehicleModule } from './vehicle/vehicle.module';
 
 @Module({
-  imports: [FileUploadModule,
+  imports: [
   GraphQLModule.forRoot({
-    autoSchemaFile: join(process.cwd(), 'src/file-schema.gql'),
-  })],
+    autoSchemaFile: join(process.cwd(), 'src/vehicle-schema.gql'),
+    uploads:false
+  }),
+  VehicleModule],
   controllers: [],
   providers: [],
 })
